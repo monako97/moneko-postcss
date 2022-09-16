@@ -1,2 +1,2 @@
-# moneko-postcss
+# @moneko/postcss
 postcss

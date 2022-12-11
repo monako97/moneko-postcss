@@ -1,6 +1,6 @@
 {
     "name": "@moneko/postcss",
-    "version": "1.0.19",
+    "version": "1.0.20",
     "description": "",
     "main": "index.js",
     "scripts": {},
@@ -10,7 +10,6 @@
     "dependencies": {
       "postcss": "8.4.16",
       "postcss-js": "4.0.0",
-      "postcss-jsx": "0.36.4",
       "postcss-flexbugs-fixes": "5.0.2",
       "postcss-loader": "7.0.1",
       "postcss-plugin-px2rem": "0.8.1",

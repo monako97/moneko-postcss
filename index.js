@@ -1,5 +1,5 @@
 module.exports = {
-  parser: "postcss-jsx",
+  parser: "postcss-js",
   plugins: [
     // 更有效的引入内联样式表，并重新合并
     require("postcss-import")(),

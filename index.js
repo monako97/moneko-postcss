@@ -24,6 +24,6 @@ module.exports = {
       grid: "autoplace", // 启用-ms-Grid Layout的前缀
       overrideBrowserslist: ["> 0.15% in CN"],
     },
-    "cssnano": {},
+    ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
   },
 };

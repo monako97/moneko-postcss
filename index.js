@@ -1,10 +1,29 @@
+const path = require("path");
+const fs = require("fs");
+
+let hasTailwindcss = false;
+
+try {
+  const tailwindcssConfPath = path.join(
+    process.cwd(),
+    `./tailwindcss-config.js`
+  );
+
+  accessSync(tailwindcssConfPath, fs.constants.R_OK);
+  hasTailwindcss = true;
+} catch (error) {
+  hasTailwindcss = false;
+}
+
+const postcssPresetEnvOpt = hasTailwindcss
+  ? { features: { "nesting-rules": false } }
+  : {};
 module.exports = {
-  parser: "postcss-js",
   plugins: {
     // 更有效的引入内联样式表，并重新合并
     "postcss-import": {},
     // 自动添加兼容性前缀polyfills
-    "postcss-preset-env": {},
+    "postcss-preset-env": postcssPresetEnvOpt,
     // 修复了一些已知的flexbox错误
     "postcss-flexbugs-fixes": {},
     // 为浅色文本 添加抗锯齿功能
@@ -16,10 +35,15 @@ module.exports = {
       // exclude: /(node_module)/, // 排除文件夹 /(node_module)/。如果想把UI框架内的px也转换成rem，设为false
       exclude: false,
     },
-    tailwindcss: {},
+    ...(hasTailwindcss
+      ? {
+          "tailwindcss/nesting": "postcss-nesting",
+          tailwindcss: {},
+        }
+      : {}),
     // 自动添加前缀
     autoprefixer: {
-      browsers: ["last 2 versions"],
+      browsers: ["last 1 versions"],
       flexbox: "no-2009", // 仅为规范的最终版本和IE版本添加前缀。
       grid: "autoplace", // 启用-ms-Grid Layout的前缀
       overrideBrowserslist: ["> 0.15% in CN"],

@@ -18,7 +18,7 @@ try {
 const postcssPresetEnvOpt = hasTailwindcss
   ? { features: { "nesting-rules": false } }
   : {};
-module.exports = {
+const postcssConfig = {
   plugins: {
     // 更有效的引入内联样式表，并重新合并
     "postcss-import": {},
@@ -51,3 +51,10 @@ module.exports = {
     ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
   },
 };
+
+exports.js = {
+  ...postcssConfig,
+  parser: 'postcss-js',
+}
+exports.css = postcssConfig
+module.exports = postcssConfig;

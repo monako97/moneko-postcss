@@ -52,9 +52,4 @@ const postcssConfig = {
   },
 };
 
-exports.js = {
-  ...postcssConfig,
-  parser: 'postcss-js',
-}
-exports.css = postcssConfig
 module.exports = postcssConfig;

@@ -1,6 +1,6 @@
 {
   "name": "@moneko/postcss",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "postcss",
   "main": "index.js",
   "scripts": {},
@@ -8,7 +8,7 @@
   "author": "moneko",
   "license": "ISC",
   "dependencies": {
-    "cssnano": "6.1.2",
+    "cssnano": "7.0.0",
     "postcss": "8.4.38",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-import": "16.1.0",

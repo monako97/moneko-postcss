@@ -1,6 +1,6 @@
 {
   "name": "@moneko/postcss",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "postcss",
   "main": "index.js",
   "scripts": {},
@@ -8,7 +8,7 @@
   "author": "moneko",
   "license": "ISC",
   "dependencies": {
-    "cssnano": "7.0.0",
+    "cssnano": "7.0.1",
     "postcss": "8.4.38",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-import": "16.1.0",
@@ -16,7 +16,7 @@
     "postcss-light-text": "0.0.1",
     "postcss-loader": "8.1.1",
     "postcss-plugin-px2rem": "0.8.1",
-    "postcss-preset-env": "9.5.9",
+    "postcss-preset-env": "9.5.11",
     "postcss-scss": "4.0.9"
   },
   "files": [
